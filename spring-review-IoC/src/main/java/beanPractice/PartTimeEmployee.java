@@ -2,6 +2,6 @@ package beanPractice;
 
 public class PartTimeEmployee {
     public void createAccount(){
-        System.out.println("Partime Employee is created");
+        System.out.println("Parttime Employee is created");
     }
 }
