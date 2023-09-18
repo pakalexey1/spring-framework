@@ -6,21 +6,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SalaryService {
+public class OvertimeService {
 
     EmployeeRepository employeeRepository;
     HoursRepository hoursRepository;
 
-    //implicitely Autowired
-    public SalaryService(EmployeeRepository employeeRepository, @Qualifier("RH") HoursRepository hoursRepository) {
+    public OvertimeService(EmployeeRepository employeeRepository, @Qualifier("OTH") HoursRepository hoursRepository) {
         this.employeeRepository = employeeRepository;
         this.hoursRepository = hoursRepository;
     }
 
-    public void calculateRegularSalary(){
-        //HourlyRate * Regular Hours
-        System.out.println(employeeRepository.getHourlyRate() * hoursRepository.getHours());
-
-
+    public void calculateOvertimeSalary(){
+        System.out.println(hoursRepository.getHours() * employeeRepository.getHourlyRate());
     }
 }
