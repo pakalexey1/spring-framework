@@ -2,6 +2,7 @@ package com.example.bootstrap;
 
 import com.example.entity.Department;
 import com.example.entity.Employee;
+import com.example.entity.Region;
 import com.example.enums.Gender;
 import com.example.repository.DepartmentRepository;
 import com.example.repository.EmployeeRepository;
@@ -30,6 +31,7 @@ public class DataGenerator implements CommandLineRunner {
 
         List<Employee> employeesList = new ArrayList<>();
         List<Department> departmentList = new ArrayList<>();
+        List<Region> regionList = new ArrayList<>();
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006,04,20), Gender.F,154864);
         Employee e2 = new Employee("Aeriell", "McNee", "amcnee1@google.es", LocalDate.of(2009,01,26), Gender.F,56752);
@@ -43,32 +45,38 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 = new Department("Phones & Tablets","Electronics");
         Department d5 = new Department("Computers","Electronics");
 
+        Region r1 = new Region("Southwest","United States");
+        Region r2 = new Region("Central","United States");
+        Region r3 = new Region("Northwest","United States");
+        Region r4 = new Region("Quebec'","Canada");
+        Region r5 = new Region("Central","Asia");
+
         e1.setDepartment(d1);
         e2.setDepartment(d2);
         e3.setDepartment(d3);
         e4.setDepartment(d4);
         e5.setDepartment(d5);
 
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
+
+
         employeesList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
         departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
+        regionList.addAll(Arrays.asList(r1,r2,r3,r4,r5));
 
         employeeRepository.saveAll(employeesList);
 //        departmentRepository.saveAll(departmentList);
 
 
-//        Region r1 = new Region("Southwest","United States");
-//        Region r2 = new Region("Central","United States");
-//        Region r3 = new Region("Northwest","United States");
-//        Region r4 = new Region("Quebec'","Canada");
-//        Region r5 = new Region("Central","Asia");
+
 //
 
 //
-//        e1.setRegion(r1);
-//        e2.setRegion(r2);
-//        e3.setRegion(r3);
-//        e4.setRegion(r4);
-//        e5.setRegion(r5);
+
 
 
 
