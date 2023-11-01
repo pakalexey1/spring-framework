@@ -25,7 +25,7 @@ public class Payment {
 
     private Status paymentStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PaymentDetail paymentDetail;
 
     public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
