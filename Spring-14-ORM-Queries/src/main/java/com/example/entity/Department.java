@@ -1,17 +1,18 @@
 package com.example.entity;
 
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
 @Entity
-@Table(name="deparments")
+@Table(name="departments")
 @Data
 @NoArgsConstructor
 public class Department {
 
     @Id
-    private String deparment;
+    private String department;
     private String division;
 }
