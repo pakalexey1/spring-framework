@@ -17,7 +17,6 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
 
     //Write a derived query to read a movie with a name
 
-    @Override
     Optional<Movie> findByName(String name);
 
     //Write a derived query to list all movies between a range of prices
